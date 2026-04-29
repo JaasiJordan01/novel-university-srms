@@ -1,0 +1,7 @@
+# Ignore the hash generator and any config with real passwords
+generate_hash.php
+# Ignore large media files if any
+*.mp4
+*.mp3
+# Ignore the database file if you accidentally exported it as .sql
+usrsms_db.sql

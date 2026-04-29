@@ -45,6 +45,17 @@ $role = $_SESSION['role'];
             <div class="col-md-3"><a href="lecturer/enter_marks.php" class="btn btn-dark w-100 p-3">Enter Marks</a></div>
             <div class="col-md-3"><a href="lecturer/class_lists.php" class="btn btn-outline-dark w-100 p-3">Class Lists</a></div>
         <?php endif; ?>
+        <?php
+require_once 'config/database.php';
+$total_students = $pdo->query("SELECT COUNT(*) FROM students")->fetchColumn();
+$total_courses  = $pdo->query("SELECT COUNT(*) FROM courses")->fetchColumn();
+$total_revenue  = $pdo->query("SELECT COALESCE(SUM(amount),0) FROM payments")->fetchColumn();
+?>
+<div class="row mt-5">
+    <div class="col-md-4"><div class="card text-center"><div class="card-body"><h5>Total Students</h5><p class="display-6"><?= $total_students ?></p></div></div></div>
+    <div class="col-md-4"><div class="card text-center"><div class="card-body"><h5>Courses</h5><p class="display-6"><?= $total_courses ?></p></div></div></div>
+    <div class="col-md-4"><div class="card text-center"><div class="card-body"><h5>Total Payments</h5><p class="display-6"><?= number_format($total_revenue) ?></p></div></div></div>
+</div>
     </div>
 </div>
 </body>

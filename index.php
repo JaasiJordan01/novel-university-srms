@@ -10,13 +10,13 @@ if (isset($_SESSION['user_id'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>USRMS Login</title>
+    <title>Novel International University Login</title>
     <!-- Bootstrap CSS for nice styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
     <div class="container mt-5" style="max-width: 400px;">
-        <h3 class="text-center mb-4">University Student Records System</h3>
+        <h3 class="text-center mb-4">Novel International University<br>Student Records System</h3>
         <?php if (isset($_GET['error'])): ?>
             <div class="alert alert-danger"><?= htmlspecialchars($_GET['error']) ?></div>
         <?php endif; ?>
