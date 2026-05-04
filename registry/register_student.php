@@ -81,4 +81,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-primary mt-3">Register</button>
     </form>
 </div>
+<?php require_once '../includes/footer.php'; ?>
 </body></html>

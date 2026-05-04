@@ -41,4 +41,5 @@ $students = $pdo->query("SELECT student_id, first_name, last_name FROM students 
         </tbody>
     </table>
 </div>
+<?php require_once '../includes/footer.php'; ?>
 </body></html>

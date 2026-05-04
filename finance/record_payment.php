@@ -53,4 +53,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="../dashboard.php" class="btn btn-secondary mt-3">Back</a>
     </form>
 </div>
+<?php require_once '../includes/footer.php'; ?>
 </body></html>

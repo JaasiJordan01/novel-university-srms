@@ -76,4 +76,5 @@ $available = $courses->fetchAll();
         <button type="submit" class="btn btn-primary">Enroll Selected Courses</button>
     </form>
 </div>
+<?php require_once '../includes/footer.php'; ?>
 </body></html>

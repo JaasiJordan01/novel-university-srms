@@ -11,24 +11,45 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <title>Novel International University – SRMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap 5 CSS -->
+    <!-- Bootstrap 5 CSS + Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Optional: custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body { padding-top: 70px; } /* to avoid navbar overlapping */
-        .navbar-brand img { height: 30px; margin-right: 10px; }
+        /* Custom Colors */
+        :root {
+            --primary-color: #1a3c6e;   /* Deep blue */
+            --secondary-color: #f8f9fa;
+        }
+        body {
+            padding-top: 56px; /* navbar height */
+        }
+        .sidebar .nav-link {
+            color: #adb5bd;
+            transition: 0.2s;
+        }
+        .sidebar .nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+        .sidebar .nav-link.active {
+            background: var(--primary-color);
+            color: white !important;
+        }
+        /* Mobile adjustments */
+        @media (max-width: 991.98px) {
+            .sidebar {
+                display: none;
+            }
+        }
+        /* Main content offset for desktop sidebar */
+        @media (min-width: 992px) {
+            body {
+                margin-left: 250px;
+            }
+        }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="../dashboard.php">
-        🎓 Novel International University
-    </a>
-    <span class="navbar-text text-light me-3">
-        <?= htmlspecialchars($_SESSION['full_name']) ?> (<?= $_SESSION['role'] ?>)
-    </span>
-    <a href="../auth/logout.php" class="btn btn-outline-light btn-sm">Logout</a>
-  </div>
-</nav>
-<div class="container mt-4">
+<?php include 'topbar.php'; ?>
+<?php include 'sidebar.php'; ?>
+<main class="mt-3 px-3 px-lg-4">

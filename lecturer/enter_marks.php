@@ -116,4 +116,5 @@ if ($course_id) {
     <?php endif; ?>
     <a href="../dashboard.php" class="btn btn-secondary mt-3">Back to Dashboard</a>
 </div>
+<?php require_once '../includes/footer.php'; ?>
 </body></html>

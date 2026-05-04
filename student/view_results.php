@@ -51,4 +51,5 @@ $results = $stmt->fetchAll();
     </table>
 </div>
 <a href="../dashboard.php" class="btn btn-secondary">Back</a>
+<?php require_once '../includes/footer.php'; ?>
 </body></html>

@@ -75,4 +75,5 @@ $courses = $pdo->query("SELECT c.*, pc.course_code AS prereq_code
         </tbody>
     </table>
 </div>
+<?php require_once '../includes/footer.php'; ?>
 </body></html>

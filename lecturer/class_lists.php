@@ -40,4 +40,5 @@ if ($course_id) {
         <div class="alert alert-warning mt-3">No enrollment found.</div>
     <?php endif; ?>
 </div>
+<?php require_once '../includes/footer.php'; ?>
 </body></html>
