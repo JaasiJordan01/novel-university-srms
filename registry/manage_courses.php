@@ -32,6 +32,12 @@ $courses = $pdo->query("SELECT c.*, pc.course_code AS prereq_code
 <html><head><title>Manage Courses</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
 <body>
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../dashboard.php">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Record Payment</li>
+  </ol>
+</nav>
 <div class="container mt-4">
     <h3>Course Management</h3>
     <?= $message ?>

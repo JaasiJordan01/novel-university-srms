@@ -19,10 +19,21 @@ if ($course_id) {
 <html><head><title>Class List</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
 <body>
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../dashboard.php">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Record Payment</li>
+  </ol>
+</nav>
 <div class="container mt-4">
     <h3>Class List</h3>
     <form method="get" class="row g-3">
-        <div class="col-md-4"><label>Course</label><select name="course_id" class="form-select" required><option value="">-- Select --</option><?php foreach($courses as $c): ?><option value="<?= $c['course_id'] ?>" <?= $course_id==$c['course_id']?'selected':'' ?>><?= $c['course_code'].' - '.$c['course_name'] ?></option><?php endforeach; ?></select></div>
+        <div class="col-md-4"><input list="coursesList" name="course_id" class="form-control" placeholder="Start typing course code..." required>
+<datalist id="coursesList">
+   <?php foreach ($courses as $c): ?>
+       <option value="<?= $c['course_id'] ?>"><?= $c['course_code'] ?> - <?= $c['course_name'] ?></option>
+   <?php endforeach; ?>
+   </datalist></div>
         <div class="col-md-3"><label>Semester</label><select name="semester" class="form-select"><option <?= $semester=='Sem1'?'selected':'' ?>>Sem1</option><option <?= $semester=='Sem2'?'selected':'' ?>>Sem2</option><option <?= $semester=='Summer'?'selected':'' ?>>Summer</option></select></div>
         <div class="col-md-3"><label>Academic Year</label><input type="text" name="academic_year" class="form-control" value="<?= $academic_year ?>"></div>
         <div class="col-md-2 align-self-end"><button type="submit" class="btn btn-info">Load</button></div>

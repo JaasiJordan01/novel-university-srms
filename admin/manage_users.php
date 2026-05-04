@@ -30,7 +30,12 @@ $users = $pdo->query("SELECT * FROM users ORDER BY role, full_name")->fetchAll()
 
 require_once '../includes/header.php';
 ?>
-
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../dashboard.php">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Record Payment</li>
+  </ol>
+</nav>
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h2>User Management</h2>
     <!-- Button to trigger the modal -->

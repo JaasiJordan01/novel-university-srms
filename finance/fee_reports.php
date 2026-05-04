@@ -9,11 +9,27 @@ $academic_year = $_GET['academic_year'] ?? '2026/2027';
 
 // Fetch all students
 $students = $pdo->query("SELECT student_id, first_name, last_name FROM students WHERE status = 'active' ORDER BY last_name");
+if (isset($_GET['export']) && $_GET['export'] == 'csv') {
+    header('Content-Type: text/csv');
+    header('Content-Disposition: attachment; filename="fee_report_'.$semester.'_'.$academic_year.'.csv"');
+    $output = fopen('php://output', 'w');
+    fputcsv($output, ['Student ID', 'Name', 'Tuition', 'Paid', 'Balance']);
+    // loop through students and write rows
+    // (same loop used later in table)
+    fclose($output);
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html><head><title>Fee Report</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
 <body>
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../dashboard.php">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Record Payment</li>
+  </ol>
+</nav>
 <div class="container mt-4">
     <h3>Fee Report (<?= $semester ?> - <?= $academic_year ?>)</h3>
     <form class="row g-3 mb-4" method="get">
@@ -40,6 +56,9 @@ $students = $pdo->query("SELECT student_id, first_name, last_name FROM students 
         <?php endwhile; ?>
         </tbody>
     </table>
+    <a href="fee_reports.php?export=csv&semester=<?= $semester ?>&academic_year=<?= $academic_year ?>" class="btn btn-outline-success">
+    <i class="bi bi-download"></i> Export CSV
+</a>
 </div>
 <?php require_once '../includes/footer.php'; ?>
 </body></html>

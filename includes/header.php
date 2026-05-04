@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_id'])) {
             padding-top: 56px; /* navbar height */
         }
         .sidebar .nav-link {
-            color: #adb5bd;
+            color: #93eb3c;
             transition: 0.2s;
         }
         .sidebar .nav-link:hover {

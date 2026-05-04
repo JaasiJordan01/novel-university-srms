@@ -29,6 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html><head><title>Record Payment</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
 <body>
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../dashboard.php">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Record Payment</li>
+  </ol>
+</nav>
 <div class="container mt-4">
     <h3>Record Tuition Payment</h3>
     <?= $message ?>
@@ -52,6 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-primary mt-3">Submit Payment</button>
         <a href="../dashboard.php" class="btn btn-secondary mt-3">Back</a>
     </form>
+    <a href="../dashboard.php" class="btn btn-outline-secondary mb-3">
+   <i class="bi bi-arrow-left"></i> Back to Dashboard
+</a>
 </div>
 <?php require_once '../includes/footer.php'; ?>
 </body></html>

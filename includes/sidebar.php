@@ -11,4 +11,9 @@
 <!-- Desktop sidebar -->
 <nav id="desktopSidebar" class="d-none d-lg-block bg-success text-white sidebar" style="width: 250px; position: fixed; left: 0; top: 56px; height: calc(100vh - 56px); overflow-y: auto;">
   <?php include __DIR__.'/sidebar_content.php'; ?>
+</nav><nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../dashboard.php">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Record Payment</li>
+  </ol>
 </nav>
