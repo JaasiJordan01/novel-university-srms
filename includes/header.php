@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../index.php");
     exit();
@@ -20,6 +22,10 @@ if (!isset($_SESSION['user_id'])) {
             --primary-color: #1a3c6e;   /* Deep blue */
             --secondary-color: #f8f9fa;
         }
+    html, body {
+            height: 100%;
+            margin: 0;
+    }
         body {
             padding-top: 56px; /* navbar height */
         }
@@ -47,6 +53,25 @@ if (!isset($_SESSION['user_id'])) {
                 margin-left: 250px;
             }
         }
+
+        @media (min-width: 992px) {
+        body {
+            margin-left: 250px;
+        }
+        #desktopSidebar {
+            width: 250px;
+            position: fixed;
+            left: 0;
+            top: 56px;
+            height: calc(100vh - 56px);
+            overflow-y: auto;
+            z-index: 1000;
+        }
+    }
+    main {
+        min-height: calc(100vh - 56px);
+        width: 100%;
+    }
     </style>
 </head>
 <body>

@@ -1,6 +1,7 @@
 <?php
 $role = $_SESSION['role'];
 ?>
+
 <ul class="nav flex-column p-3">
   <li class="nav-item">
     <a class="nav-link text-white <?= basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active bg-primary' : '' ?>" href="../dashboard.php">
@@ -15,7 +16,7 @@ $role = $_SESSION['role'];
     </a>
     <div class="collapse" id="studentsMenu">
       <a class="nav-link text-white ps-4" href="../registry/register_student.php"><i class="bi bi-person-plus me-1"></i> Register Student</a>
-      <a class="nav-link text-white ps-4" href="#"><i class="bi bi-list-ul me-1"></i> Admissions</a>
+      <a class="nav-link text-white ps-4" href="../registry/admissions.php"><i class="bi bi-list-ul me-1"></i> Admissions</a>
     </div>
   </li>
   <?php endif; ?>
