@@ -51,11 +51,13 @@ $total_students = $pdo->query("SELECT COUNT(*) FROM students")->fetchColumn();
 $total_courses  = $pdo->query("SELECT COUNT(*) FROM courses")->fetchColumn();
 $total_revenue  = $pdo->query("SELECT COALESCE(SUM(amount),0) FROM payments")->fetchColumn();
 ?>
+<?php if (in_array($role, ['admin','registry','finance'])): ?>
 <div class="row mt-5">
     <div class="col-md-4"><div class="card text-center"><div class="card-body"><h5>Total Students</h5><p class="display-6"><?= $total_students ?></p></div></div></div>
     <div class="col-md-4"><div class="card text-center"><div class="card-body"><h5>Courses</h5><p class="display-6"><?= $total_courses ?></p></div></div></div>
     <div class="col-md-4"><div class="card text-center"><div class="card-body"><h5>Total Payments</h5><p class="display-6"><?= number_format($total_revenue) ?></p></div></div></div>
 </div>
+<?php endif; ?>
     </div>
 </div>
 </body>
