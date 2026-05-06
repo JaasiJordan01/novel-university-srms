@@ -49,6 +49,11 @@ $role = $_SESSION['role'];
   </li>
   <?php endif; ?>
 
+  <li>
+    <a class="nav-link text-white" href="../admin/approve_applications.php">
+    <i class="bi bi-check-circle me-2"></i> Applications
+</a>
+  </li>
   <li class="nav-item">
     <a class="nav-link text-white" href="#">
       <i class="bi bi-moon-stars me-2"></i> Dark Mode

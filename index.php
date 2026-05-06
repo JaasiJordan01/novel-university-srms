@@ -176,6 +176,10 @@ if (isset($_SESSION['user_id'])) {
             </button>
         </form>
 
+        <div class="text-center mt-3">
+            <small>Not yet registered? <a href="apply.php">Apply Now</a></small>
+        </div>
+
         <div class="text-center mt-4">
             <small class="text-muted">
                 <i class="bi bi-info-circle me-1"></i>

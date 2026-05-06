@@ -77,4 +77,4 @@ if (!isset($_SESSION['user_id'])) {
 <body>
 <?php include 'topbar.php'; ?>
 <?php include 'sidebar.php'; ?>
-<main class="mt-3 px-3 px-lg-4">
+<main class="mt-3 px-3 px-lg-4 pb-5">
