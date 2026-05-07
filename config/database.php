@@ -1,9 +1,9 @@
 <?php
-// config/database.php
+// Local XAMPP configuration
 $host = 'localhost';
 $db   = 'usrsms_db';
 $user = 'root';
-$pass = '';          // XAMPP MySQL default has no password
+$pass = '';                // XAMPP default has no password
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
